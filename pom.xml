@@ -8,6 +8,7 @@
     <artifactId>Frameworks</artifactId>
     <packaging>pom</packaging>
     <version>develeop.1.0.0</version>
+
     <modules>
         <module>Frameworks-Data</module>
         <module>Frameworks-Web</module>
@@ -15,17 +16,54 @@
         <module>Frameworks-Service</module>
         <module>Frameworks-Gateway</module>
         <module>Frameworks-Expression</module>
+        <module>Frameworks-Security</module>
+        <module>Frameworks-Logger</module>
+        <module>Frameworks-Boot</module>
     </modules>
 
     <properties>
+        <org.projectlombok.lombok>1.18.24</org.projectlombok.lombok>
+        <junit.junit>4.13.2</junit.junit>
+        <cn.hutool.hutool-all>5.8.3</cn.hutool.hutool-all>
+        <cglib.cglib>3.3.0</cglib.cglib>
         <io.undertow.undertow-core>2.2.18.Final</io.undertow.undertow-core>
         <io.undertow.undertow-servlet>2.2.18.Final</io.undertow.undertow-servlet>
+        <org.slf4j.slf4j-api>1.7.36</org.slf4j.slf4j-api>
+        <com.googlecode.aviator.aviator>5.3.1</com.googlecode.aviator.aviator>
+        <com.ejlchina.bean-searcher>3.7.1</com.ejlchina.bean-searcher>
+        <com.ejlchina.okhttps>3.5.2</com.ejlchina.okhttps>
+        <com.dtflys.forest.forest-core>1.5.24</com.dtflys.forest.forest-core>
+        <com.alibaba.fastjson>2.0.8</com.alibaba.fastjson>
+        <com.alibaba.druid>1.2.11</com.alibaba.druid>
+        <com.github.ben-manes.caffeine.caffeine>3.1.1</com.github.ben-manes.caffeine.caffeine>
+        <mysql.mysql-connector-java>8.0.29</mysql.mysql-connector-java>
+        <org.xerial.sqlite-jdbc>3.36.0.3</org.xerial.sqlite-jdbc>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
    <dependencyManagement>
        <dependencies>
+           <dependency>
+               <groupId>org.projectlombok</groupId>
+               <artifactId>lombok</artifactId>
+               <version>${org.projectlombok.lombok}</version>
+           </dependency>
+           <dependency>
+               <groupId>junit</groupId>
+               <artifactId>junit</artifactId>
+               <version>${junit.junit}</version>
+           </dependency>
+           <dependency>
+               <groupId>cn.hutool</groupId>
+               <artifactId>hutool-all</artifactId>
+               <version>${cn.hutool.hutool-all}</version>
+           </dependency>
+           <dependency>
+               <groupId>cglib</groupId>
+               <artifactId>cglib</artifactId>
+               <version>${cglib.cglib}</version>
+           </dependency>
            <dependency>
                <groupId>io.undertow</groupId>
                <artifactId>undertow-core</artifactId>
@@ -35,6 +73,51 @@
                <groupId>io.undertow</groupId>
                <artifactId>undertow-servlet</artifactId>
                <version>${io.undertow.undertow-servlet}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-api</artifactId>
+               <version>${org.slf4j.slf4j-api}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.googlecode.aviator</groupId>
+               <artifactId>aviator</artifactId>
+               <version>${com.googlecode.aviator.aviator}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.ejlchina</groupId>
+               <artifactId>okhttps</artifactId>
+               <version>${com.ejlchina.okhttps}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.dtflys.forest</groupId>
+               <artifactId>forest-core</artifactId>
+               <version>${com.dtflys.forest.forest-core}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.alibaba</groupId>
+               <artifactId>fastjson</artifactId>
+               <version>${com.alibaba.fastjson}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.alibaba</groupId>
+               <artifactId>druid</artifactId>
+               <version>${com.alibaba.druid}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.github.ben-manes.caffeine</groupId>
+               <artifactId>caffeine</artifactId>
+               <version>${com.github.ben-manes.caffeine.caffeine}</version>
+           </dependency>
+           <dependency>
+               <groupId>mysql</groupId>
+               <artifactId>mysql-connector-java</artifactId>
+               <version>${mysql.mysql-connector-java}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.xerial</groupId>
+               <artifactId>sqlite-jdbc</artifactId>
+               <version>${org.xerial.sqlite-jdbc}</version>
            </dependency>
        </dependencies>
    </dependencyManagement>
