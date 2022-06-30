@@ -4,11 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--集百家之所长，成一家之言-->
+    <!--Frameworks父项目，管理版本依赖-->
     <groupId>com.github.Topcoder2023</groupId>
     <artifactId>Frameworks</artifactId>
     <packaging>pom</packaging>
     <version>develeop.1.0.0</version>
 
+    <!--Frameworks子模块定义-->
+    <!--子模块应仅依赖工具库，不应依赖同功能的框架-->
     <modules>
         <module>Frameworks-Data</module>
         <module>Frameworks-Web</module>
@@ -21,6 +25,7 @@
         <module>Frameworks-Boot</module>
     </modules>
 
+    <!--依赖库版本号定义-->
     <properties>
         <org.projectlombok.lombok>1.18.24</org.projectlombok.lombok>
         <junit.junit>4.13.2</junit.junit>
@@ -42,84 +47,112 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-   <dependencyManagement>
-       <dependencies>
-           <dependency>
-               <groupId>org.projectlombok</groupId>
-               <artifactId>lombok</artifactId>
-               <version>${org.projectlombok.lombok}</version>
-           </dependency>
-           <dependency>
-               <groupId>junit</groupId>
-               <artifactId>junit</artifactId>
-               <version>${junit.junit}</version>
-           </dependency>
-           <dependency>
-               <groupId>cn.hutool</groupId>
-               <artifactId>hutool-all</artifactId>
-               <version>${cn.hutool.hutool-all}</version>
-           </dependency>
-           <dependency>
-               <groupId>cglib</groupId>
-               <artifactId>cglib</artifactId>
-               <version>${cglib.cglib}</version>
-           </dependency>
-           <dependency>
-               <groupId>io.undertow</groupId>
-               <artifactId>undertow-core</artifactId>
-               <version>${io.undertow.undertow-core}</version>
-           </dependency>
-           <dependency>
-               <groupId>io.undertow</groupId>
-               <artifactId>undertow-servlet</artifactId>
-               <version>${io.undertow.undertow-servlet}</version>
-           </dependency>
-           <dependency>
-               <groupId>org.slf4j</groupId>
-               <artifactId>slf4j-api</artifactId>
-               <version>${org.slf4j.slf4j-api}</version>
-           </dependency>
-           <dependency>
-               <groupId>com.googlecode.aviator</groupId>
-               <artifactId>aviator</artifactId>
-               <version>${com.googlecode.aviator.aviator}</version>
-           </dependency>
-           <dependency>
-               <groupId>com.ejlchina</groupId>
-               <artifactId>okhttps</artifactId>
-               <version>${com.ejlchina.okhttps}</version>
-           </dependency>
-           <dependency>
-               <groupId>com.dtflys.forest</groupId>
-               <artifactId>forest-core</artifactId>
-               <version>${com.dtflys.forest.forest-core}</version>
-           </dependency>
-           <dependency>
-               <groupId>com.alibaba</groupId>
-               <artifactId>fastjson</artifactId>
-               <version>${com.alibaba.fastjson}</version>
-           </dependency>
-           <dependency>
-               <groupId>com.alibaba</groupId>
-               <artifactId>druid</artifactId>
-               <version>${com.alibaba.druid}</version>
-           </dependency>
-           <dependency>
-               <groupId>com.github.ben-manes.caffeine</groupId>
-               <artifactId>caffeine</artifactId>
-               <version>${com.github.ben-manes.caffeine.caffeine}</version>
-           </dependency>
-           <dependency>
-               <groupId>mysql</groupId>
-               <artifactId>mysql-connector-java</artifactId>
-               <version>${mysql.mysql-connector-java}</version>
-           </dependency>
-           <dependency>
-               <groupId>org.xerial</groupId>
-               <artifactId>sqlite-jdbc</artifactId>
-               <version>${org.xerial.sqlite-jdbc}</version>
-           </dependency>
-       </dependencies>
-   </dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <!--简化JavaBean与日志代码插件-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${org.projectlombok.lombok}</version>
+            </dependency>
+            <!--单元测试工具-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.junit}</version>
+            </dependency>
+            <!--HuTool工具库-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${cn.hutool.hutool-all}</version>
+            </dependency>
+            <!--动态代理工具库-->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.cglib}</version>
+            </dependency>
+            <!--Undertow服务器核心-->
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-core</artifactId>
+                <version>${io.undertow.undertow-core}</version>
+            </dependency>
+            <!--Undertow的Servlet接口-->
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-servlet</artifactId>
+                <version>${io.undertow.undertow-servlet}</version>
+            </dependency>
+            <!--日志门面-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${org.slf4j.slf4j-api}</version>
+            </dependency>
+            <!--表达式引擎-->
+            <dependency>
+                <groupId>com.googlecode.aviator</groupId>
+                <artifactId>aviator</artifactId>
+                <version>${com.googlecode.aviator.aviator}</version>
+            </dependency>
+            <!--HTTP请求工具-->
+            <dependency>
+                <groupId>com.ejlchina</groupId>
+                <artifactId>okhttps</artifactId>
+                <version>${com.ejlchina.okhttps}</version>
+            </dependency>
+            <!--HTTP客户端工具-->
+            <dependency>
+                <groupId>com.dtflys.forest</groupId>
+                <artifactId>forest-core</artifactId>
+                <version>${com.dtflys.forest.forest-core}</version>
+            </dependency>
+            <!--JSON序列化工具-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com.alibaba.fastjson}</version>
+            </dependency>
+            <!--数据库连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${com.alibaba.druid}</version>
+            </dependency>
+            <!--W-TinyLFU算法的缓存工具-->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${com.github.ben-manes.caffeine.caffeine}</version>
+            </dependency>
+            <!--MySQL驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.mysql-connector-java}</version>
+            </dependency>
+            <!--Sqlite内嵌式数据库-->
+            <dependency>
+                <groupId>org.xerial</groupId>
+                <artifactId>sqlite-jdbc</artifactId>
+                <version>${org.xerial.sqlite-jdbc}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
+    <build>
+        <plugins>
+            <!--编译保存参数名称-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <parameters>true</parameters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
