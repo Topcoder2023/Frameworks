@@ -43,6 +43,7 @@
         <com.github.ben-manes.caffeine.caffeine>3.1.1</com.github.ben-manes.caffeine.caffeine>
         <mysql.mysql-connector-java>8.0.29</mysql.mysql-connector-java>
         <org.xerial.sqlite-jdbc>3.36.0.3</org.xerial.sqlite-jdbc>
+        <com.gitee.frameworks.Frameworks-Logger>${project.version}</com.gitee.frameworks.Frameworks-Logger>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
@@ -138,6 +139,11 @@
                 <groupId>org.xerial</groupId>
                 <artifactId>sqlite-jdbc</artifactId>
                 <version>${org.xerial.sqlite-jdbc}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Logger</artifactId>
+                <version>${com.gitee.frameworks.Frameworks-Logger}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
