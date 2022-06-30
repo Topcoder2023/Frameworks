@@ -2,20 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Frameworks</artifactId>
+        <groupId>com.github.Topcoder2023</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.Topcoder2023</groupId>
-    <artifactId>Frameworks</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>Frameworks-Data</module>
-        <module>Frameworks-Web</module>
-        <module>Frameworks-Bean</module>
-        <module>Frameworks-Service</module>
-        <module>Frameworks-Gateway</module>
-        <module>Frameworks-Expression</module>
-    </modules>
+    <artifactId>Frameworks-Web</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
