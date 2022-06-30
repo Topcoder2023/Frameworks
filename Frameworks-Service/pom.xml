@@ -13,9 +13,45 @@
     <artifactId>Frameworks-Service</artifactId>
     <packaging>jar</packaging>
     <version>${parent.version}</version>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ejlchina</groupId>
+            <artifactId>okhttps</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gitee.frameworks</groupId>
+            <artifactId>Frameworks-Web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gitee.frameworks</groupId>
+            <artifactId>Frameworks-Logger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gitee.frameworks</groupId>
+            <artifactId>Frameworks-Data</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -43,13 +43,13 @@
         <com.github.ben-manes.caffeine.caffeine>3.1.1</com.github.ben-manes.caffeine.caffeine>
         <mysql.mysql-connector-java>8.0.29</mysql.mysql-connector-java>
         <org.xerial.sqlite-jdbc>3.36.0.3</org.xerial.sqlite-jdbc>
-        <com.gitee.frameworks.Frameworks-Logger>${project.version}</com.gitee.frameworks.Frameworks-Logger>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--=========================================Frameworks依赖库=============================================-->
             <!--简化JavaBean与日志代码插件-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -140,10 +140,61 @@
                 <artifactId>sqlite-jdbc</artifactId>
                 <version>${org.xerial.sqlite-jdbc}</version>
             </dependency>
+
+            <!--=========================================Frameworks子模块=============================================-->
+            <!--日志模块-->
             <dependency>
                 <groupId>com.gitee.frameworks</groupId>
                 <artifactId>Frameworks-Logger</artifactId>
-                <version>${com.gitee.frameworks.Frameworks-Logger}</version>
+                <version>${project.version}</version>
+            </dependency>
+            <!--Web模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--Bean容器模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Bean</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--数据模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--微服务模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--网关模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Gateway</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--权限模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--表达式模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Expression</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--启动器模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Boot</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
