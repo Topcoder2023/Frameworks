@@ -6,7 +6,7 @@
 
     <!--集百家之所长，成一家之言-->
     <!--Frameworks父项目，管理版本依赖-->
-    <groupId>com.github.Topcoder2023</groupId>
+    <groupId>com.gitee.frameworks</groupId>
     <artifactId>Frameworks</artifactId>
     <packaging>pom</packaging>
     <version>develeop.1.0.0</version>
