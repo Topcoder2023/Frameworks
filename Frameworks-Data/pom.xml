@@ -5,12 +5,13 @@
     <parent>
         <artifactId>Frameworks</artifactId>
         <groupId>com.github.Topcoder2023</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>develeop.1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Frameworks-Data</artifactId>
-
+    <packaging>jar</packaging>
+    <version>${parent.version}</version>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

@@ -7,7 +7,7 @@
     <groupId>com.github.Topcoder2023</groupId>
     <artifactId>Frameworks</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>develeop.1.0.0</version>
     <modules>
         <module>Frameworks-Data</module>
         <module>Frameworks-Web</module>
@@ -18,8 +18,25 @@
     </modules>
 
     <properties>
+        <io.undertow.undertow-core>2.2.18.Final</io.undertow.undertow-core>
+        <io.undertow.undertow-servlet>2.2.18.Final</io.undertow.undertow-servlet>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+   <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>io.undertow</groupId>
+               <artifactId>undertow-core</artifactId>
+               <version>${io.undertow.undertow-core}</version>
+           </dependency>
+           <dependency>
+               <groupId>io.undertow</groupId>
+               <artifactId>undertow-servlet</artifactId>
+               <version>${io.undertow.undertow-servlet}</version>
+           </dependency>
+       </dependencies>
+   </dependencyManagement>
 
 </project>
