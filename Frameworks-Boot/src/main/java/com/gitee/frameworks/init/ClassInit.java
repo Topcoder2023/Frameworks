@@ -5,6 +5,7 @@ import cn.hutool.core.util.ClassUtil;
 import com.gitee.frameworks.FrameworksBoot;
 import com.gitee.frameworks.annotation.Scanner;
 import com.gitee.frameworks.common.InitAble;
+import com.gitee.frameworks.common.InitParam;
 import com.gitee.frameworks.common.SortAble;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

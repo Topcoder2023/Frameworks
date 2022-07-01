@@ -9,7 +9,7 @@
     <groupId>com.gitee.frameworks</groupId>
     <artifactId>Frameworks</artifactId>
     <packaging>pom</packaging>
-    <version>develeop.1.0.0</version>
+    <version>${com.gitee.frameworks.Frameworks}</version>
 
     <!--Frameworks子模块定义-->
     <!--子模块应仅依赖工具库，不应依赖同功能的框架-->
@@ -23,10 +23,12 @@
         <module>Frameworks-Security</module>
         <module>Frameworks-Logger</module>
         <module>Frameworks-Boot</module>
+        <module>Frameworks-Common</module>
     </modules>
 
     <!--依赖库版本号定义-->
     <properties>
+        <com.gitee.frameworks.Frameworks>develop.1.0.0</com.gitee.frameworks.Frameworks>
         <org.projectlombok.lombok>1.18.24</org.projectlombok.lombok>
         <junit.junit>4.13.2</junit.junit>
         <cn.hutool.hutool-all>5.8.3</cn.hutool.hutool-all>
@@ -45,6 +47,7 @@
         <org.xerial.sqlite-jdbc>3.36.0.3</org.xerial.sqlite-jdbc>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <org.apache.maven.plugins.maven-compiler-plugin>3.10.1</org.apache.maven.plugins.maven-compiler-plugin>
     </properties>
 
     <dependencyManagement>
@@ -196,6 +199,12 @@
                 <artifactId>Frameworks-Boot</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!--通用接口模块-->
+            <dependency>
+                <groupId>com.gitee.frameworks</groupId>
+                <artifactId>Frameworks-Common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -205,7 +214,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${org.apache.maven.plugins.maven-compiler-plugin}</version>
                 <configuration>
                     <parameters>true</parameters>
                 </configuration>

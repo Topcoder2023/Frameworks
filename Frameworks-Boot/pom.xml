@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.gitee.frameworks</groupId>
         <artifactId>Frameworks</artifactId>
-        <version>develeop.1.0.0</version>
+        <version>develop.1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -30,6 +30,10 @@
         <dependency>
             <groupId>com.gitee.frameworks</groupId>
             <artifactId>Frameworks-Logger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gitee.frameworks</groupId>
+            <artifactId>Frameworks-Common</artifactId>
         </dependency>
     </dependencies>
 

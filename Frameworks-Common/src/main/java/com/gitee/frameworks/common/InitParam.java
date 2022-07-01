@@ -1,4 +1,4 @@
-package com.gitee.frameworks.init;
+package com.gitee.frameworks.common;
 
 import cn.hutool.core.date.TimeInterval;
 import cn.hutool.setting.dialect.Props;

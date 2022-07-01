@@ -4,7 +4,7 @@ import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.lang.caller.CallerUtil;
 import com.gitee.frameworks.common.ExecuteAble;
 import com.gitee.frameworks.common.InitAble;
-import com.gitee.frameworks.init.InitParam;
+import com.gitee.frameworks.common.InitParam;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
