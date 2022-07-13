@@ -2,6 +2,8 @@ package com.gitee.frameworks.common;
 
 import cn.hutool.core.util.ReflectUtil;
 
+import java.util.List;
+
 /**
  * 可排序接口
  *
@@ -92,5 +94,26 @@ public interface SortAble {
      */
     default Integer beforeWebInit() {
         return WEB_INIT - 1;
+    }
+
+    /**
+     * 对给定的List进行排序
+     *
+     * @param list list集合
+     * @param <T>  任意元素泛型
+     * @return 排序后的集合
+     */
+    static <T> List<T> sort(List<T> list) {
+        list.sort((o1, o2) -> {
+            int sort1 = 0, sort2 = 0;
+            if (o1 instanceof SortAble) {
+                sort1 = ((SortAble) o1).sort();
+            }
+            if (o2 instanceof SortAble) {
+                sort2 = ((SortAble) o2).sort();
+            }
+            return (sort1 - sort2);
+        });
+        return list;
     }
 }

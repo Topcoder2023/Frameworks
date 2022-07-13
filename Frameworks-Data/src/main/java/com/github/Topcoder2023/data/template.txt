@@ -1,0 +1,1 @@
+object(num id, str name, bool flag, student)

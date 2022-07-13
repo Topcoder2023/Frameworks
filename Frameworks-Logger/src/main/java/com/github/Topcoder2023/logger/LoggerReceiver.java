@@ -1,11 +1,13 @@
 package com.github.Topcoder2023.logger;
 
+import com.github.Topcoder2023.logger.appender.Appender;
+import org.slf4j.Logger;
 import org.slf4j.Marker;
 
 /**
  * @author hongda.li@hand-china.com 2022/6/30 14:00
  */
-public final class LoggerReceiver implements org.slf4j.Logger {
+public final class LoggerReceiver implements Logger {
     private final String name;
 
     public LoggerReceiver(String name) {
@@ -73,19 +75,29 @@ public final class LoggerReceiver implements org.slf4j.Logger {
     }
 
     @Override
-    public void debug(String s) {}
+    public void debug(String s) {
+        Appender.APPENDER_SET.forEach(appender -> appender.debug(s, (Object) null));
+    }
 
     @Override
-    public void debug(String s, Object o) {}
+    public void debug(String s, Object o) {
+        Appender.APPENDER_SET.forEach(appender -> appender.debug(s, (Object) null));
+    }
 
     @Override
-    public void debug(String s, Object o, Object o1) {}
+    public void debug(String s, Object o, Object o1) {
+        Appender.APPENDER_SET.forEach(appender -> appender.debug(s, o, o1));
+    }
 
     @Override
-    public void debug(String s, Object... objects) {}
+    public void debug(String s, Object... objects) {
+        Appender.APPENDER_SET.forEach(appender -> appender.debug(s, objects));
+    }
 
     @Override
-    public void debug(String s, Throwable throwable) {}
+    public void debug(String s, Throwable throwable) {
+        Appender.APPENDER_SET.forEach(appender -> appender.debug(s, throwable));
+    }
 
     @Override
     public boolean isDebugEnabled(Marker marker) {
@@ -114,7 +126,7 @@ public final class LoggerReceiver implements org.slf4j.Logger {
 
     @Override
     public void info(String s) {
-
+        System.out.println(s);
     }
 
     @Override
@@ -163,7 +175,9 @@ public final class LoggerReceiver implements org.slf4j.Logger {
     }
 
     @Override
-    public void warn(String s) {}
+    public void warn(String s) {
+        System.out.println(s);
+    }
 
     @Override
     public void warn(String s, Object o) {}
@@ -204,7 +218,7 @@ public final class LoggerReceiver implements org.slf4j.Logger {
 
     @Override
     public void error(String s) {
-
+        System.out.println(s);
     }
 
     @Override

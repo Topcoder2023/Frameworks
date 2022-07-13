@@ -12,7 +12,6 @@
     <version>${com.gitee.frameworks.Frameworks}</version>
 
     <!--Frameworks子模块定义-->
-    <!--子模块应仅依赖工具库，不应依赖同功能的框架-->
     <modules>
         <module>Frameworks-Data</module>
         <module>Frameworks-Web</module>
@@ -30,6 +29,7 @@
     <properties>
         <com.gitee.frameworks.Frameworks>develop.1.0.0</com.gitee.frameworks.Frameworks>
         <org.projectlombok.lombok>1.18.24</org.projectlombok.lombok>
+        <com.google.inject.guice>5.1.0</com.google.inject.guice>
         <junit.junit>4.13.2</junit.junit>
         <cn.hutool.hutool-all>5.8.3</cn.hutool.hutool-all>
         <cglib.cglib>3.3.0</cglib.cglib>
@@ -58,6 +58,12 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${org.projectlombok.lombok}</version>
+            </dependency>
+            <!--依赖注入工具-->
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${com.google.inject.guice}}</version>
             </dependency>
             <!--单元测试工具-->
             <dependency>

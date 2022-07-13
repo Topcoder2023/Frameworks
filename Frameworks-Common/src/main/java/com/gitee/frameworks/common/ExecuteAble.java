@@ -1,7 +1,7 @@
 package com.gitee.frameworks.common;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 可执行接口
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 @FunctionalInterface
 public interface ExecuteAble {
-    Set<ExecuteAble> EXECUTES = new HashSet<>();
+    List<ExecuteAble> EXECUTES = new ArrayList<>();
 
     /**
      * 执行

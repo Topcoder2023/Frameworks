@@ -1,8 +1,8 @@
 package com.gitee.frameworks.common;
 
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 可初始化接口
@@ -14,10 +14,10 @@ public interface InitAble {
     /**
      * 可初始化接口的实现类集合
      */
-    Set<InitAble> INITS = new HashSet<>();
+    List<InitAble> INITS = new ArrayList<>();
 
     /**
      * 执行初始化操作
      */
-    void doInit();
+    void doInit(InitParam initParam);
 }
