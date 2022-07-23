@@ -131,7 +131,7 @@ public final class LoggerReceiver implements Logger {
 
     @Override
     public void info(String s, Object o) {
-
+        System.out.println(s);
     }
 
     @Override

@@ -1,12 +1,16 @@
 package com.gitee.frameworks.common;
 
 import cn.hutool.core.date.TimeInterval;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.setting.dialect.Props;
 import lombok.Builder;
 import lombok.ToString;
 import lombok.Value;
 
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -18,8 +22,13 @@ import java.util.Set;
 public class InitParam {
     Class<?> boot;
     String[] args;
-    Set<Props> messages = new HashSet<>();
+    Map<String, Props> messages = new HashMap<>();
     TimeInterval interval;
     Set<Class<?>> classes = new HashSet<>();
     Environment env = Environment.env();
+
+    public InitParam addMessage(String name){
+        this.messages.put(name, Props.getProp(StrUtil.addSuffixIfNot(name, ".properties"), StandardCharsets.UTF_8));
+        return this;
+    }
 }

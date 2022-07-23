@@ -9,6 +9,7 @@ import com.gitee.frameworks.common.InitParam;
 import com.gitee.frameworks.common.SortAble;
 import lombok.extern.slf4j.Slf4j;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class PropertyInit implements InitAble, SortAble {
         String path = SystemUtil.get(NAME);
         try {
             if (StrUtil.isNotEmpty(path)) {
-                props.add(Props.getProp(path));
+                props.add(Props.getProp(path, StandardCharsets.UTF_8));
             }
         } catch (NoResourceException e) {
             log.warn("103", path);

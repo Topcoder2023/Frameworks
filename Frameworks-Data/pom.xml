@@ -12,9 +12,25 @@
     <artifactId>Frameworks-Data</artifactId>
     <packaging>jar</packaging>
     <version>${parent.version}</version>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gitee.frameworks</groupId>
+            <artifactId>Frameworks-Common</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
