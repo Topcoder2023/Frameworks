@@ -1,9 +1,9 @@
-package com.gitee.frameworks.init;
+package com.gitee.frameworks.boot.init;
 
 import cn.hutool.core.annotation.AnnotationUtil;
 import cn.hutool.core.util.ClassUtil;
 import cn.hutool.core.util.ReflectUtil;
-import com.gitee.frameworks.annotation.Scanner;
+import com.gitee.frameworks.boot.annotation.Scanner;
 import com.gitee.frameworks.common.ExecuteAble;
 import com.gitee.frameworks.common.InitAble;
 import com.gitee.frameworks.common.InitParam;

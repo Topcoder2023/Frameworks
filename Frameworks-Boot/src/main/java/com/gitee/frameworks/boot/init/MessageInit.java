@@ -1,4 +1,4 @@
-package com.gitee.frameworks.init;
+package com.gitee.frameworks.boot.init;
 
 import com.gitee.frameworks.common.InitAble;
 import com.gitee.frameworks.common.InitParam;

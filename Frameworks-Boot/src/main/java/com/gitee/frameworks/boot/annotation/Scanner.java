@@ -1,4 +1,4 @@
-package com.gitee.frameworks.annotation;
+package com.gitee.frameworks.boot.annotation;
 
 import cn.hutool.core.util.StrUtil;
 

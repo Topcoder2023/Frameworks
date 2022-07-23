@@ -1,4 +1,4 @@
-package com.gitee.frameworks;
+package com.gitee.frameworks.boot;
 
 import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.lang.caller.CallerUtil;
@@ -8,7 +8,7 @@ import com.gitee.frameworks.common.InitAble;
 import com.gitee.frameworks.common.InitParam;
 import com.gitee.frameworks.common.MessageReader;
 import com.gitee.frameworks.common.SortAble;
-import com.gitee.frameworks.init.ScanInit;
+import com.gitee.frameworks.boot.init.ScanInit;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,11 +19,24 @@ import lombok.extern.slf4j.Slf4j;
 public class FrameworksBoot {
     @Getter
     private static InitParam initParam;
+    private static final int CALLER_PATH = 3;
 
+    /**
+     * 无参启动
+     */
     public static void run() {
-        run(null);
+        try {
+            boot(null);
+        } catch (CommonException e) {
+            throw new CommonException(MessageReader.get(initParam.getMessages(), e.getCode(), e.getParams()));
+        }
     }
 
+    /**
+     * 有参启动
+     *
+     * @param args 启动参数
+     */
     public static void run(String[] args) {
         try {
             boot(args);
@@ -32,10 +45,15 @@ public class FrameworksBoot {
         }
     }
 
+    /**
+     * 启动程序
+     *
+     * @param args 启动参数
+     */
     private static void boot(String[] args) {
         // 初始化参数
         initParam = InitParam.builder()
-                .boot(CallerUtil.getCallerCaller())
+                .boot(CallerUtil.getCaller(CALLER_PATH))
                 .args(args)
                 .interval(new TimeInterval(false))
                 .build();

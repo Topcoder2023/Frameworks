@@ -1,4 +1,4 @@
-package com.gitee.frameworks.init;
+package com.gitee.frameworks.boot.init;
 
 import cn.hutool.core.io.resource.NoResourceException;
 import cn.hutool.core.util.StrUtil;
@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Slf4j
 public class PropertyInit implements InitAble, SortAble {
-    private static final String NAME = "config-path";
+    private static final String NAME = "configuration.path";
     private static final List<String> NAMES = Arrays.asList("application.properties", "config.properties", "app.properties");
 
     @Override
@@ -28,13 +28,15 @@ public class PropertyInit implements InitAble, SortAble {
         try {
             if (StrUtil.isNotEmpty(path)) {
                 props.add(Props.getProp(path, StandardCharsets.UTF_8));
+                log.info("104", path);
             }
         } catch (NoResourceException e) {
             log.warn("103", path);
         }
         NAMES.forEach(name -> {
             try {
-                props.add(Props.getProp(name));
+                props.add(Props.getProp(name, StandardCharsets.UTF_8));
+                log.info("104", name);
             } catch (NoResourceException ignored) {
             }
         });
